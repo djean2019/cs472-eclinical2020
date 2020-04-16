@@ -1,0 +1,41 @@
+[{
+        "id": "P001",
+        "firstName": "Xsron",
+        "middleName": null,
+        "lastName": "Hou",
+        "phoneNumber": "641 451 1234",
+        "address": "1000 N 4th St, Fairfield, Iowa"
+    },
+    {
+        "id": "P002",
+        "firstName": "Darphe",
+        "middleName": "Hyppolite",
+        "lastName": "Jean",
+        "phoneNumber": "641 451 1235",
+        "address": "1000 N 4th St, Fairfield, Iowa"
+    },
+    {
+        "id": "P003",
+        "firstName": "Tsegaye",
+        "middleName": "Tenkir",
+        "lastName": "Beza",
+        "phoneNumber": "641 451 1236",
+        "address": "1000 N 4th St, Fairfield, Iowa"
+    },
+    {
+        "id": "P004",
+        "firstName": "Kanharith",
+        "middleName": null,
+        "lastName": "Sok",
+        "phoneNumber": "641 451 1237",
+        "address": "1000 N 4th St, Fairfield, Iowa"
+    },
+    {
+        "id": "P005",
+        "firstName": "Sinishaw",
+        "middleName": null,
+        "lastName": "Tenaw",
+        "phoneNumber": "641 451 1238",
+        "address": "1000 N 4th St, Fairfield, Iowa"
+    }
+]

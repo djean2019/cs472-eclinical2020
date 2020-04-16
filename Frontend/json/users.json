@@ -1,0 +1,56 @@
+[{
+        "id": "U001",
+        "firstName": "Xsron",
+        "middleName": null,
+        "lastName": "Hou",
+        "username": "xsron",
+        "userType": 1,
+        "phoneNumber": "641 451 1234",
+        "address": "1000 N 4th St, Fairfield, Iowa",
+        "isLocked": false
+    },
+    {
+        "id": "U002",
+        "firstName": "Darphe",
+        "middleName": "Hyppolite",
+        "lastName": "Jean",
+        "username": "darphe",
+        "userType": 2,
+        "phoneNumber": "641 451 1235",
+        "address": "1000 N 4th St, Fairfield, Iowa",
+        "isLocked": false
+    },
+    {
+        "id": "U003",
+        "firstName": "Tsegaye",
+        "middleName": "Tenkir",
+        "lastName": "Beza",
+        "username": "tsegaye",
+        "userType": 3,
+        "phoneNumber": "641 451 1236",
+        "address": "1000 N 4th St, Fairfield, Iowa",
+        "isLocked": false
+    },
+    {
+        "id": "U004",
+        "firstName": "Kanharith",
+        "middleName": null,
+        "lastName": "Sok",
+        "username": "kanharith",
+        "userType": 1,
+        "phoneNumber": "641 451 1237",
+        "address": "1000 N 4th St, Fairfield, Iowa",
+        "isLocked": false
+    },
+    {
+        "id": "U005",
+        "firstName": "Sinishaw",
+        "middleName": null,
+        "lastName": "Tenaw",
+        "username": "sinishaw",
+        "userType": 1,
+        "phoneNumber": "641 451 1238",
+        "address": "1000 N 4th St, Fairfield, Iowa",
+        "isLocked": true
+    }
+]

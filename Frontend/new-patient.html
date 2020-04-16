@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patient Management</title>
+    <link rel="icon" href="./images/favicon.png">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="./css/common.css">
+    <script defer src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script defer src="./js/common.js"></script>
+    <script defer src="./js/new-patient.js"></script>
+
+
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container">
+            <a class="navbar-brand" href="./index.html">CS472</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item" id="homeMenu">
+                        <a class="nav-link" href="./index.html">Home <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item" id="userMenu">
+                        <a class="nav-link" href="./users.html">User</a>
+                    </li>
+                    <li class="nav-item" id="doctorMenu">
+                        <a class="nav-link" href="./doctors.html">Doctor</a>
+                    </li>
+                    <li class="nav-item" id="patientMenu">
+                        <a class="nav-link" href="./patients.html">Patient</a>
+                    </li>
+                    <li class="nav-item" id="medicineMenu">
+                        <a class="nav-link" href="./medicines.html">Medicine</a>
+                    </li>
+                    <li class="nav-item" id="diseaseMenu">
+                        <a class="nav-link" href="./diseases.html">Disease</a>
+                    </li>
+                    <li class="nav-item" id="appointmentMenu">
+                        <a class="nav-link" href="./appointments.html">Appointment</a>
+                    </li>
+                    <li class="nav-item" id="checkInOutMenu">
+                        <a class="nav-link" href="./checkInOut.html">Check In Check Out</a>
+                    </li>
+                    <li class="nav-item active" id="addEditDeletePatientMenu">
+                        <a class="nav-link" href="./new-patient.html">Add Edit Remove Patient</a>
+                    </li>
+                </ul>
+                <form class="form-inline my-2 my-lg-0">
+                    <a id="username" class="mr-sm-2"></a>
+                    <button class="btn btn-outline-warning my-2 my-sm-0" type="submit" id="signOutButton">Sign out</button>
+                </form>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div>
+            <br>
+            <h2>Patient Management Center</h2>
+            <br>
+        </div>
+        <form>
+            <div class="row">
+                <div class="col-sm-5">
+                    <input type="hidden" class="form-control" id="patientId" required>
+                    <div class="form-group">
+                        <label for="firstName">*First name</label>
+                        <input type="text" class="form-control" id="firstName" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="middleName">Middle name</label>
+                        <input type="text" class="form-control" id="middleName">
+                    </div>
+                    <div class="form-group">
+                        <label for="lastName">*Last name</label>
+                        <input type="text" class="form-control" id="lastName" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phoneNumber">*PhoneNumber</label>
+                        <input type="tel" class="form-control" id="phoneNumber" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="address">*Address</label>
+                        <input type="text" class="form-control" id="address" required>
+                    </div>
+                    <div class="form-group">
+                        <button id="addPatient" type="submit" class="btn btn-outline-success">ADD Patient</button>
+                        <button id="updatePatient" type="submit" class="btn btn-outline-success">UPDATE Patient</button>
+                        <button id="removePatient" type="submit" class="btn btn-outline-danger">REMOVE Patient</button>
+                    </div>
+                    <div class="form-group">
+                        <button type="reset" class="btn btn-outline-dark">Clear</button>
+                    </div>
+
+                </div>
+                <div class="col-sm-7">
+                    <table class="table table-striped" id="table">
+                        <thead>
+                            <tr>
+                                <th scope="col">#</th>
+                                <th scope="col">ID</th>
+                                <th scope="col">Full name</th>
+                                <th scope="col">Phone number</th>
+                                <th scope="col">Address</th>
+                            </tr>
+                        </thead>
+                        <tbody></tbody>
+                    </table>
+                </div>
+            </div>
+        </form>
+    </div>
+
+
+</body>
+
+</html>

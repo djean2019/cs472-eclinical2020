@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Appointments</title>
+    <link rel="icon" href="./images/favicon.png">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script defer src="./js/appointments.js"></script>
+    <link rel="stylesheet" href="./css/common.css">
+    <script defer src="./js/common.js"></script>
+    <link href="https://www.jqueryscript.net/css/jquerysctipttop.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="aicon/style.css">
+    <link rel="stylesheet" href="css/jquery-pseudo-ripple.css">
+    <link rel="stylesheet" href="css/jquery-nao-calendar.css">
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container">
+            <a class="navbar-brand" href="./index.html">CS472</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item" id="homeMenu">
+                        <a class="nav-link" href="./index.html">Home <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item" id="userMenu">
+                        <a class="nav-link" href="./users.html">User</a>
+                    </li>
+                    <li class="nav-item" id="doctorMenu">
+                        <a class="nav-link" href="./doctors.html">Doctor</a>
+                    </li>
+                    <li class="nav-item" id="patientMenu">
+                        <a class="nav-link" href="./patients.html">Patient</a>
+                    </li>
+                    <li class="nav-item" id="medicineMenu">
+                        <a class="nav-link" href="./medicines.html">Medicine</a>
+                    </li>
+                    <li class="nav-item" id="diseaseMenu">
+                        <a class="nav-link" href="./diseases.html">Disease</a>
+                    </li>
+                    <li class="nav-item active" id="appointmentMenu">
+                        <a class="nav-link" href="./appointments.html">Appointment</a>
+                    </li>
+                    <li class="nav-item" id="checkInOutMenu">
+                        <a class="nav-link" href="./checkInOut.html">Check In Check Out</a>
+                    </li>
+                    <li class="nav-item" id="addEditDeletePatientMenu">
+                        <a class="nav-link" href="./new-patient.html">Add Edit Remove Patient</a>
+                    </li>
+                </ul>
+                <form class="form-inline my-2 my-lg-0">
+                    <a id="username" class="mr-sm-2"></a>
+                    <button class="btn btn-outline-warning my-2 my-sm-0" type="submit" id="signOutButton">Sign out</button>
+                </form>
+            </div>
+        </div>
+    </nav>
+    <!-- Trigger the modal with a button -->
+    <!-- <a href="#Modal" class="btn btn-info btn-lg">Open modal</a> -->
+    <!-- Modal -->
+
+
+    <div id="Modal" class="modal fade" role="dialog" data-toggle="Modal" data-target="#myModal">
+        <div class="modal-dialog">
+
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+
+                    <h4 class="modal-title">Patient Appointment</h4>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="form-group">
+                            <label for="date" class="col-form-label">Date:</label>
+                            <input type="text" disabled class="form-control" id="appdate" name="appdate">
+                        </div>
+                        <!-- <div class="form-group">
+                  <label for="patient-name" class="col-form-label">Patient Name:</label>
+                  <input type="text" class="form-control" id="patientName" name="patiantName">
+              </div> -->
+                        <div class="form-group">
+                            <label for="time" class="col-form-label">Time:</label>
+                            <select class="form-control" id="time" name="time">
+                    <option="">....</option>
+                    <option value="10:00:00">10:00:00</option>
+                    <option value="12:00:00">12:00:00</option>
+                </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="specialization">*Specialization</label>
+                            <select class="form-control" id="specialization">
+                    <option></option>
+                </select>
+                        </div>
+                        <!-- <div class="form-group">
+                  <label for="Specialized-Doctor" class="col-form-label">Specialization:</label>
+                  <select class="form-control" id="specializedDoctor">
+                      <option value="">....</option>
+                      <option value="Generalist">Generalist</option>
+                  </select>
+                </div> -->
+                        <!-- <div class="form-group">
+                  <label for="patient-Description" class="col-form-label">Patient Description:</label>
+                  <textarea cols="3" rows="5" class="form-control" id="patientDescription"></textarea>
+                </div> -->
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary" id="addButton">Save changes</button>
+                </div>
+            </div>
+            <!-- end MODAL-->
+        </div>
+    </div>
+    <div class="container">
+        <h1>Appointment Form</h1>
+        <div class="myCalendar"></div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="./js/jquery-pseudo-ripple.js"></script>
+    <script src="./js/jquery-nao-calendar.js"></script>
+
+
+    <script>
+        $('.myCalendar').calendar({
+            date: new Date(),
+            autoSelect: false, // false by default
+            select: function(date) {
+                // getPatients();
+                console.log(date)
+                var year = date.getFullYear();
+
+                var month = (1 + date.getMonth()).toString();
+                month = month.length > 1 ? month : '0' + month;
+
+                var day = date.getDate().toString();
+                day = day.length > 1 ? day : '0' + day;
+
+                // return month + '/' + day + '/' + year;
+                $("#appdate").val(year + '-' + month + '-' + day);
+
+
+                let specializations;
+
+                getSpecializations();
+
+
+                function getSpecializations() {
+
+                    fetch("http://localhost:8080/miuclinical/api/specializationcontroller")
+
+                    .then(response => response.json())
+
+                    .then((items) => {
+
+                        specializations = items.data;
+                        $("#specialization").empty();
+
+                        //alert($("#specialization"));
+
+                        const specializationOptions = $("#specialization");
+
+                        $.each(specializations, function(index, item) {
+
+                            specializationOptions.append(new Option(item.specializationName, item.specializationId));
+
+                        });
+
+                        $("#Modal").modal("show");
+
+
+                    })
+
+                    .catch(error => alert(error));
+
+                }
+                //  alert();
+
+
+
+
+            },
+            toggle: function(y, m) {
+                console.log('TOGGLE', y, m)
+            }
+
+        })
+    </script>
+
+    <script>
+        $('a[href$="#Modal"]').on("click", function() {
+            $('#Modal').modal('show');
+        });
+    </script>
+</body>
+
+</html>

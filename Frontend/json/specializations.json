@@ -1,0 +1,45 @@
+[{
+        "id": "S001",
+        "name": "Podiatrist"
+    },
+    {
+        "id": "S002",
+        "name": "General Practitioner"
+    },
+    {
+        "id": "S003",
+        "name": "Pediatrician"
+    },
+    {
+        "id": "S004",
+        "name": "Endocrinologist"
+    },
+    {
+        "id": "S005",
+        "name": "Neurologist"
+    },
+    {
+        "id": "S006",
+        "name": "Rheumatologist"
+    },
+    {
+        "id": "S007",
+        "name": "Allergist"
+    },
+    {
+        "id": "S008",
+        "name": "Psychiatrist"
+    },
+    {
+        "id": "S009",
+        "name": "Nephrologist"
+    },
+    {
+        "id": "S010",
+        "name": "OB"
+    },
+    {
+        "id": "S011",
+        "name": "Pulmonologist"
+    }
+]

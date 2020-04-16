@@ -1,0 +1,25 @@
+.cover {
+    background: url("/images/medic-563423_1280.jpg");
+    background-size: cover;
+    display: table;
+    width: 100%;
+    box-shadow: inset 0 0 100px #000;
+    height: 600px;
+}
+
+.cover-Text {
+    text-align: center;
+    color: black;
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.cover-Text h1 {
+    margin: 0;
+    font-size: 70px;
+}
+
+hr {
+    margin: 30px 0 30px 0;
+    padding: 20px;
+}

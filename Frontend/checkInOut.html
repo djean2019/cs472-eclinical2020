@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patient Check In / Check Out</title>
+    <link rel="icon" href="./images/favicon.png">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="./css/common.css">
+    <script defer src="./js/checkInOut.js"></script>
+    <script defer src="./js/common.js"></script>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container">
+            <a class="navbar-brand" href="./index.html">CS472</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item" id="homeMenu">
+                        <a class="nav-link" href="./index.html">Home <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item" id="userMenu">
+                        <a class="nav-link" href="./users.html">User</a>
+                    </li>
+                    <li class="nav-item" id="doctorMenu">
+                        <a class="nav-link" href="./doctors.html">Doctor</a>
+                    </li>
+                    <li class="nav-item" id="patientMenu">
+                        <a class="nav-link" href="./patients.html">Patient</a>
+                    </li>
+                    <li class="nav-item" id="medicineMenu">
+                        <a class="nav-link" href="./medicines.html">Medicine</a>
+                    </li>
+                    <li class="nav-item" id="diseaseMenu">
+                        <a class="nav-link" href="./diseases.html">Disease</a>
+                    </li>
+                    <li class="nav-item" id="appointmentMenu">
+                        <a class="nav-link" href="./appointments.html">Appointment</a>
+                    </li>
+                    <li class="nav-item active" id="checkInOutMenu">
+                        <a class="nav-link" href="./checkInOut.html">Check In Check Out</a>
+                    </li>
+                    <li class="nav-item" id="addEditDeletePatientMenu">
+                        <a class="nav-link" href="./new-patient.html">Add Edit Remove Patient</a>
+                    </li>
+                </ul>
+                <form class="form-inline my-2 my-lg-0">
+                    <a id="username" class="mr-sm-2"></a>
+                    <button class="btn btn-outline-warning my-2 my-sm-0" type="submit" id="signOutButton">Sign out</button>
+                </form>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+
+        <table class="table table-striped" id="table">
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Appointment Date</th>
+                    <th scope="col">Appointment Time</th>
+                    <th scope="col">Specialization</th>
+                    <th scope="col">Appointed By</th>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="myModal">Check In / Check Out information</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="form-group">
+                            <div class="row">
+                                <div class="col">
+                                    <label for="patientName">*Patient Name</label> <br>
+                                    <label id="patientName">Patient Name</label>
+                                </div>
+                                <div class="col">
+                                    <label for="doctorName">*Doctor Name</label> <br>
+                                    <label for="doctorName">Doctor Name</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="row">
+                                <div class="col">
+                                    <label for="checkInDateTime">*Check In Date & Time</label><br>
+                                    <label id="checkInDateTime">--/--/---- --:-- --</label>
+                                    <!--<input type="datetime-local" class="form-control" id="checkInDateTime" required>-->
+                                </div>
+
+                                <div class="col">
+                                    <label for="charge">*Charge</label>
+                                    <input type="number" class="form-control" id="charge" required>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <p>Medicine Type(Choose all That Apply)</p>
+                                <div class="form-check" id="medicineCheckbox">
+
+                                </div>
+
+                            </div>
+                            <div class="col-sm-6">
+                                <p>Disease Catagory(Select your history)</p>
+                                <div class="form-check" id="diseaseCheckbox">
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="descritption">*Descritption</label>
+                            <br>
+                            <textarea name="" id="descritption" class="form-control" cols="150" rows="8"></textarea>
+                        </div>
+                        <hr>
+                        <button type="reset" class="btn btn-outline-secondary">Reset</button>
+
+                        <button type="button" id="checkInOutBtn" class="btn btn-outline-success">Check IN / Out</button>
+
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+
+</body>
+
+</html>

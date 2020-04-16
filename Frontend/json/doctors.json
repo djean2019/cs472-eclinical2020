@@ -1,0 +1,46 @@
+[{
+        "id": "D001",
+        "firstName": "Xsron",
+        "middleName": null,
+        "lastName": "Hou",
+        "specialization": "Dentist",
+        "phoneNumber": "641 451 1234",
+        "address": "1000 N 4th St, Fairfield, Iowa"
+    },
+    {
+        "id": "D002",
+        "firstName": "Darphe",
+        "middleName": "Hyppolite",
+        "lastName": "Jean",
+        "specialization": "Dentist",
+        "phoneNumber": "641 451 1235",
+        "address": "1000 N 4th St, Fairfield, Iowa"
+    },
+    {
+        "id": "D003",
+        "firstName": "Tsegaye",
+        "middleName": "Tenkir",
+        "lastName": "Beza",
+        "specialization": "Dentist",
+        "phoneNumber": "641 451 1236",
+        "address": "1000 N 4th St, Fairfield, Iowa"
+    },
+    {
+        "id": "D004",
+        "firstName": "Kanharith",
+        "middleName": null,
+        "lastName": "Sok",
+        "specialization": "Dentist",
+        "phoneNumber": "641 451 1237",
+        "address": "1000 N 4th St, Fairfield, Iowa"
+    },
+    {
+        "id": "D005",
+        "firstName": "Sinishaw",
+        "middleName": null,
+        "lastName": "Tenaw",
+        "specialization": "Dentist",
+        "phoneNumber": "641 451 1238",
+        "address": "1000 N 4th St, Fairfield, Iowa"
+    }
+]

@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patients</title>
+    <link rel="icon" href="./images/favicon.png">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="./css/common.css">
+    <script defer src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script defer src="./js/common.js"></script>
+    <script defer src="./js/patients.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container">
+            <a class="navbar-brand" href="./index.html">CS472</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item" id="homeMenu">
+                        <a class="nav-link" href="./index.html">Home <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item" id="userMenu">
+                        <a class="nav-link" href="./users.html">User</a>
+                    </li>
+                    <li class="nav-item" id="doctorMenu">
+                        <a class="nav-link" href="./doctors.html">Doctor</a>
+                    </li>
+                    <li class="nav-item active" id="patientMenu">
+                        <a class="nav-link" href="./patients.html">Patient</a>
+                    </li>
+                    <li class="nav-item" id="medicineMenu">
+                        <a class="nav-link" href="./medicines.html">Medicine</a>
+                    </li>
+                    <li class="nav-item" id="diseaseMenu">
+                        <a class="nav-link" href="./diseases.html">Disease</a>
+                    </li>
+                    <li class="nav-item" id="appointmentMenu">
+                        <a class="nav-link" href="./appointments.html">Appointment</a>
+                    </li>
+                    <li class="nav-item" id="checkInOutMenu">
+                        <a class="nav-link" href="./checkInOut.html">Check In Check Out</a>
+                    </li>
+                    <li class="nav-item" id="addEditDeletePatientMenu">
+                        <a class="nav-link" href="./new-patient.html">Add Edit Remove Patient</a>
+                    </li>
+                </ul>
+                <form class="form-inline my-2 my-lg-0">
+                    <a id="username" class="mr-sm-2"></a>
+                    <button class="btn btn-outline-warning my-2 my-sm-0" type="submit" id="signOutButton">Sign out</button>
+                </form>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div>
+            <br>
+            <h2 class="float-left">List of patients</h2>
+            <br>
+        </div>
+        <table class="table table-striped" id="table">
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">ID</th>
+                    <th scope="col">Full name</th>
+                    <th scope="col">Phone number</th>
+                    <th scope="col">Address</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="editPatientModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Patient Information</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+                </div>
+                <div class="modal-body">
+
+                    <form>
+                        <div class="form-group">
+                            <label for="patient-id" class="col-form-label">Patient Id:</label>
+                            <input type="text" disabled class="form-control" id="patientId">
+                        </div>
+                        <div class="form-group">
+                            <label for="patient-name" class="col-form-label">Patient Name:</label>
+                            <input type="text" class="form-control" id="patientName">
+                        </div>
+                        <div class="form-group">
+                            <label for="patient-phone" class="col-form-label">Patient Phone:</label>
+                            <input type="text" class="form-control" id="patientPhone">
+                        </div>
+                        <div class="form-group">
+                            <label for="patient-address" class="col-form-label">Patient Address:</label>
+                            <input type="text" class="form-control" id="patientAddress">
+                        </div>
+                    </form>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Central Modal Small -->
+
+    <!-- Delete Modal HTML -->
+    <div id="deletePatientModal" class="modal fade">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <form>
+                    <div class="modal-header">
+                        <h4 class="modal-title">Delete patients</h4>
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    </div>
+                    <div class="form-group">
+                        <label for="patient-id" class="col-form-label">Patient Id:</label>
+                        <input type="text" disabled class="form-control" id="deletePatientId">
+                    </div>
+                    <div class="modal-body">
+                        <p>Are you sure you want to delete these Records?</p>
+                        <p class="text-warning"><small>This action cannot be undone.</small></p>
+                    </div>
+                    <div class="modal-footer">
+                        <input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">
+                        <input type="submit" class="btn btn-danger" value="Delete">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
